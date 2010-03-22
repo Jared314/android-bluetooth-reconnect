@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" android:key="applications_settings">
+  <PreferenceCategory android:title="Bluetooth Device">
+	  <com.bluecasedevelopment.bluetooth.BluetoothPairedDeviceListPreference 
+		android:dialogTitle="Select Paired Device" 
+		android:title="Device" 
+		android:negativeButtonText="Cancel" 
+		android:key="device_id"/>
+  </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Bluetooth Reconnect</string>
+<string name="app_description">Reconnect a specified bluetooth device.</string>
+<string name="connect_failure_msg">Unable to connect to bluetooth device.</string>
+<string name="preference_key_device_id">device_id</string>
+<string name="preference_key_device_id_not_found">Target bluetooth device not set.</string>
+<string name="device_id_not_set_msg">Target bluetooth device not specified.</string>
+</resources>

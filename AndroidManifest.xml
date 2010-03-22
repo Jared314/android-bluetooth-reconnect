@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.bluecasedevelopment.bluetoothreconnect"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:description="@string/app_description" android:debuggable="true">
+        <activity android:name=".Main"
+                  android:label="@string/app_name" android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Dialog" 
+				  android:launchMode="singleTask"
+                  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ConnectPreferences"
+                  android:label="@string/app_name"
+                  >
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+	    <receiver android:name="com.bluecasedevelopment.bluetooth.A2dpConnectReceiver">
+	    	<intent-filter>
+	    		<action android:name="com.bluecasedevelopment.bluetooth.device.action.CONNECT" />
+	            <category android:name="android.intent.category.DEFAULT" />
+	    	</intent-filter>
+	    </receiver>
+		<receiver android:name=".MediaPlaybackReceiver">
+	    	<intent-filter>
+	    		<action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+	            <category android:name="android.intent.category.DEFAULT" />
+	    	</intent-filter>
+	    </receiver>	
+		<service android:name=".MediaPlaybackService">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</service>	    
+	</application>
+    <uses-sdk android:minSdkVersion="5" android:maxSdkVersion="7" android:targetSdkVersion="6"/>
+
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+</manifest> 
